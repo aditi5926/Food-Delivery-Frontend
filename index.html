@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meals on Wheels</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        body {
+            background-color: antiquewhite;
+        }
+
+        #navbar {
+            display: flex;
+            align-items: center;
+
+        }
+
+        #home p {
+            color: antiquewhite;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+
+        #logo img {
+            height: 120px;
+            width: 120px;
+        }
+
+        #navbar::before {
+            content: "";
+            background-color: rgb(41, 135, 33);
+            position: absolute;
+            height: 10%;
+            width: 100%;
+            z-index: -1;
+            opacity: 0.4;
+        }
+
+        #navbar ul {
+            margin-bottom: 0;
+            display: flex;
+
+        }
+
+        #navbar ul li {
+            list-style: none;
+            font-size: 1.3rem;
+        }
+
+        #navbar ul li a {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            color: white;
+            display: block;
+            padding: 2px 18px;
+            border-radius: 12px;
+            text-decoration: none;
+        }
+
+        #navbar ul li a:hover {
+            background-color: burlywood;
+            border-radius: 22px;
+        }
+
+        .h-primary {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 35px;
+            color: chartreuse;
+            text-align: center;
+        }
+
+        #home {
+            background: url('food1.jpg') no-repeat center center/cover;
+            display: flex;
+            flex-direction: column;
+            padding: 3px 200px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #home::before {
+            content: "";
+            position: absolute;
+            height: 10%;
+            width: 100%;
+            margin: 0px;
+            padding: 0px;
+            z-index: -1;
+            opacity: 0.89;
+        }
+
+        .button {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .btn {
+            padding: 6px 20px;
+            border: 2px solid white;
+            font-size: 23px;
+            border-radius: 12px;
+            background-color: chocolate;
+            color: white;
+            margin: 17px;
+            /* position: absolute; */
+            /* left: 600px; */
+            cursor: pointer;
+        }
+
+        .services-container {
+            display: flex;
+            flex-direction: column;
+            padding: 3px 100px;
+            margin: 12px;
+            align-items: center;
+            justify-items: center;
+        }
+
+        #h-secondary-center {
+            /* font-size: 2.8rem; */
+            /* padding: 12px; */
+            display: bloc;
+            align-items: center;
+
+        }
+
+        #h-primary-center {
+            display: flex;
+            text-align: center;
+            align-items: center;
+            align-content: center;
+        }
+
+        #services {
+            margin: 34px;
+            display: flex;
+        }
+
+        #services .box img {
+            height: 160px;
+            display: block;
+        }
+
+        #services .box {
+            border: 2px solid brown;
+            padding: 34px;
+            margin: 2px 55px;
+            border-radius: 28px;
+            background: #f2f2f2;
+            margin-bottom: 20px;
+        }
+
+        #services .box img {
+            height: 160px;
+            margin: auto;
+            display: block;
+        }
+
+        #services .box p {
+            font-family: 'Bree Serif', serif;
+
+        }
+
+        .center {
+            text-align: center;
+        }
+
+        #clientsec {
+            background: url('berries.jpg');
+            opacity: 0.4;
+            z-index: 0.5;
+        }
+        #clientsec{
+            padding: 3px 200px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #clientsec::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            background: url('berries.jpg') no-repeat center center/cover;
+            opacity: 0.4;
+            z-index: -1;
+        }
+
+        .clients {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #clients {
+            display: flex;
+            flex-direction: row;
+            position: relative;
+            left: 300px;
+        }
+
+        #clients img {
+            /* opacity: ; */
+            width: 120px;
+            padding: 6px;
+            /* height: auto; */
+        }
+
+        .all {
+            background: url('berries.jpg');
+            /* opacity: 0.4; */
+        }
+
+        .all:before {
+            /* opacity: 0.4; */
+            /* z-index: -1; */
+        }
+    .contact{  
+    position: relative;
+    /* left: 100px; */
+    background: url('contact.jpg') no-repeat center cover/center;
+}
+.contact::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.4;
+    background: url('contact.jpg') no-repeat center center/cover;
+    
+}
+.contact{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 34px;
+}
+.contact input, 
+.contact textarea{
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: 9px;
+    font-size: 1.1rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+} 
+
+.contact form{
+    width: 40%;
+}
+
+.contact label{
+   font-size: 1.3rem;
+   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   font-weight: bold;
+   font-style: italic;
+   color: blue;
+   text-align: center;
+
+}
+
+
+footer{
+    background: black;
+    color: white;
+    padding: 9px 20px;
+}
+
+/* Utility Classes */
+.h-primary{
+    font-family: 'Bree Serif', serif;
+    font-size: 3.8rem;
+    padding: 12px;
+}
+.h-primary1{
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 3.8rem;
+    padding: 12px;
+    color: cadetblue;
+}
+.h-primary2{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 3.8rem;
+    padding: 12px;
+    color: rgb(190, 208, 76);
+}
+.h-primary3{
+    font-family:cursive;
+    font-size: 3.8rem;
+    padding: 12px;
+    color:coral;
+}
+.h-secondary{
+    font-family: 'Bree Serif', serif;
+    font-size: 2.3rem;
+    padding: 12px;
+}
+
+.btn{
+    padding: 6px 20px;
+    border: 2px solid white;
+    background-color: brown;
+    color: white;
+    margin: 17px;
+    font-size: 1.5rem;
+    border-radius: 10px;
+    cursor:pointer;
+}
+
+    </style>
+</head>
+<body>
+    <nav id="navbar">
+        <div id="logo">
+            <img src="logo.png" alt="MealsOnWheels.com">
+        </div>
+        <ul>
+            <li class="item"><a href="#">Home</a></li>
+            <li class="item"><a href="#">Services</a></li>
+            <li class="item"><a href="#">Abouts Us</a></li>
+            <li class="item"><a href="#">Contact Us</a></li>
+        </ul>
+    </nav>
+    <section id="home">
+        <h1 class="h-primary">Welcome to Quick Click Deliver!<h1>
+                <p>We're pleased to see you here. Feel free to look around and see something delicious that catches your
+                    eye? Well, What are you waiting for ? </p>
+                <p>The finest delivery services are here for all your late-night cravings and gourmet dining plans.
+                    Order now!</p>
+                <div class="button">
+                    <button class="btn">
+                        Order Now
+                    </button>
+                </div>
+    </section>
+
+    <section class="services-container">
+        <h1 class="h-primary1 center">Our Services</h1>
+        <div id="services">
+            <div class="box">
+                <img src="hotdog.jpg" alt="">
+                <h2 class="h-secondary center">Food Ordering</h2>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquam ipsum ullam mollitia quis. Eaque
+                    sapiente modi officiis optio! Omnis perspiciatis ut quisquam quae amet dicta id ab, minima repellat
+                    ducimus incidunt, optio labore eaque.</p>
+            </div>
+            <div class="box">
+                <img src="pizza.jpg" alt="">
+                <h2 class="h-secondary center">Food Catering</h2>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquam ipsum ullam mollitia quis. Eaque
+                    sapiente modi officiis optio! Omnis perspiciatis ut quisquam quae amet dicta id ab, minima repellat
+                    ducimus incidunt, optio labore eaque.</p>
+            </div>
+            <div class="box">
+                <img src="foodtruck.png" alt="">
+                <h2 class="h-secondary center">Bulk Ordering</h2>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquam ipsum ullam mollitia quis. Eaque
+                    sapiente modi officiis optio! Omnis perspiciatis ut quisquam quae amet dicta id ab, minima repellat
+                    ducimus incidunt, optio labore eaque.</p>
+            </div>
+        </div>
+    </section>
+    <div class="all">
+        <section class="clientsec">
+            <h1 class="h-primary2 center">Our Clients</h1>
+            <div id="clients">
+                <div class="client-item">
+                    <img src="ms.png" alt="Our Client">
+                </div>
+                <div class="client-item">
+                    <img src="apple.png" alt="Our Client">
+                </div>
+                <div class="client-item">
+                    <img src="skype.png" alt="Our Client">
+                </div>
+                <div class="client-item">
+                    <img src="netflix.jpg" alt="Our Client">
+                </div>
+                <div class="client-item">
+                    <img src="twitter.jpg" alt="Our Client">
+                </div>
+            </div>
+        </section>
+    </div>
+    <section class="contact">
+        <h1 class="h-primary3 center">Contact Us</h1>
+        <form action="">
+            <div class="form-group">
+                <label for="name">Name: </label>
+                <input type="text" name="name" id="name" placeholder="Enter your name">
+            </div>
+            <div class="form-group">
+                <label for="email">Email: </label>
+                <input type="email" name="name" id="email" placeholder="Enter your email">
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number: </label>
+                <input type="phone" name="name" id="phone" placeholder="Enter your phone">
+            </div>
+            <div class="form-group">
+                <label for="message">Message: </label>
+                <textarea name="message" id="message" cols="30" rows="10"></textarea>
+            </div>
+            </form>
+    </section>
+    <footer>
+        <div class="center">
+            Copyright &copy; www.MealsOnWheels.com. All rights reserved!
+        </div>
+    </footer>
+</body>
+
+</html>
